@@ -4,12 +4,12 @@ AIgatha Ethereum contracts consist of
 + WalletPeriodLocker contract - 
 + Ethereum Multisignature Wallet - 
 # Token contract
-ATH is ERC-20 standard token with the following paramaters:
-Name: AIgatha
-Symbol: XXX
-Decimals: 18
-Mintable: Yes, Special role for minting, Tapped (limited speed), Finalizeable
-Burnable: Yes, owner can burn his tokens
-RBAC: Yes, Minters (mint), Owners (add minters)
-Source Code: AIgathaToken.sol
-Mainnet address: Not deployed yet
+ATH is [ERC-20](https://github.com/ethereum/EIPs/issues/20) standard token with the following paramaters:
++ Name: AIgatha token
++ Symbol: XXX
++ Decimals: 18
++ Mintable: Yes, Special role for minting, Tapped (limited speed), Finalizeable
++ Burnable: Yes, owner can burn his tokens
++ RBAC: Yes, Minters (mint), Owners (add minters)
++ Source Code: AIgathaToken.sol
++ Mainnet address: [Not deployed yet]()
