@@ -1,8 +1,8 @@
-# AIgatha Contracts
+# AIgatha Contracts (A draft document)
 AIgatha Ethereum contracts consist of
 + AIgathaToken contract - the coin supposed to be the main digital asset in AIgatha application; emits XXXs to investors during Presale and Publicsale phases.
 
-+ Vault contract - We designed the Vault Contract to store XXX token and lock ... until releasing token by period.
++ AIgathaVault contract - We designed the Vault Contract to store XXX token and lock ... until releasing token by period.
 
 + Ethereum Multisignature Wallet - 
 # Token contract
@@ -48,14 +48,46 @@ function extendSaleTime() onlyOwner public {
 + __Presale__ contributors are required to be whitelisted.
 + Extending the crowdsale for two months if the threshold is not reached.
 + Token sales threshold is 0.4 billion AIgatha tokens.
+
 ### Token Distribution
 
 
 
-# vault contract operation
+
+# Smart Contracts Code
+### Development Framework
+> + The safeMath library and Ownable contract are referred to openZeppelin
+> + tokenRecipient is the contract interface which is comply with `receiveApproval` and used by `approveAndCall`
+> + TokenERC20 is the contract standard ERC20 token with burnable functions 
+
+### Class Diagram
+The diagram below shows the inheritance relationship between the contracts used to create the AIgatha Crowdsale contract and the AIgatha Token contract.
+### AIgathaToken Contract Functions
+Documentation are listed as follows. 
++ `supply()` : return the remaining sales cap at the calling moment. It can be used internally.
++ `saleActive()` : to see whether it is on-sale or not.
++ `extendSaleTime()` : extend the sales time if the sold amount is not achieve the threshold amount set in the beginning. By calling this function, it will extend the sale time 2 months more. It can only be called by owner.
++ `getRateAt(at)` : get the exchange rate of ether to token at `at` time.
++ `push(buyer, amount)` : push `amount` to `buyer` who bought the token in preICO by owner.
++ `buyTokens(sender, value)` : `sender` uses `value` ether to buy tokens with rate obtained from `getRateAt()` 
++ `withdraw()` : withdraw all ether in the contract back to the wallet where save the whole funds. This function can only be called by owner.
++ `finalize()` : owner burn all the remain token which is unsold after the selling period and make token capable of being tranferred.
++ `functioni()` : fallback function which will redirect to `buyToken()`.
+
+### AIgathaVault Contract Functions
+> It is used to lock the `unlockAmount` of token in `wallet` every `unlockPeriod`. 
+> Therefore, one wallet should correspond to one contract like this Basic token locker which can only be operated by owner.
+
++ Documentation are listed as follows.
++ `claim()` : owner claim that all `unlockAmount` of token can be sent to wallet after `unlockPeriod` passed by.
++ `withdraw(amount)` : owner withdraw `amount` of token, which is part of `unlockAmount` , to wallet after `unlockPeriod` passed by.
+
+
+# AIgathaVault contract operation
 ![test](/images/vaultcontract_operation.png)
 
-
+# Authors
+AIgatha team: Site, GitHub
 
 
 
