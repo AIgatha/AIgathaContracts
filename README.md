@@ -1,11 +1,11 @@
 # AIgatha Contracts
 AIgatha Ethereum contracts consist of
 + AIgathaToken contract - the coin supposed to be the main digital asset in AIgatha application; emits XXXs to investors during Presale and Publicsale phases.
-+ WalletPeriodLocker contract - 
++ Vault contract - We designed the Vault Contract to store XXX token and lock ... until releasing token by period.
 + Ethereum Multisignature Wallet - 
 # Token contract
 ATH is [ERC-20](https://github.com/ethereum/EIPs/issues/20) standard token with the following paramaters:
-+ Name: __AI__gatha token
++ Name: AIgatha token
 + Symbol: __XXX__
 + Decimals: __18__
 + Mintable: __Yes__, Special role for minting, Tapped (limited speed), Finalizeable
@@ -22,6 +22,10 @@ ATH is [ERC-20](https://github.com/ethereum/EIPs/issues/20) standard token with 
 |3|Presale-3|2018-0X-0X 00:00:00|0000000000|2018-0X-XX 23:59:59|0000000000|11,500|
 |4|Publicsale-1|2018-0X-0X 00:00:00|0000000000|2018-0X-XX 23:59:59|0000000000|10,500|
 |5|Publicsale-2|2018-0X-0X 00:00:00|0000000000|2018-0X-XX 23:59:59|0000000000|10,000|
+
+
+
+![a][./images/vaultcontract_operation.png]
 
 
 
