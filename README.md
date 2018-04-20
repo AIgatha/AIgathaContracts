@@ -85,6 +85,8 @@ Documentation are listed as follows.
 
 # AIgathaVault contract operation
 ![test](/images/vaultcontract_operation.png)
+### Locking period  
+
 
 # Authors
 AIgatha team: Site, GitHub
