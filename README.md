@@ -1,6 +1,4 @@
 # AIgatha Contracts
-Crowdsale and Token contracts for AIgatha project
-#
 AIgatha Ethereum contracts consist of
 AIgathaToken contract - the coin supposed to be the main digital asset in AIgatha application; emits XXXs to investors during Presale and Publicsale phases.
 WalletPeriodLocker contract - 
