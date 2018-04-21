@@ -6,7 +6,7 @@ AIgatha Ethereum contracts consist of
 
 + Ethereum Multisignature Wallet - 
 # Token contract
-ATH is [ERC-20](https://github.com/ethereum/EIPs/issues/20) standard token with the following paramaters:
+XXX is [ERC-20](https://github.com/ethereum/EIPs/issues/20) standard token with the following paramaters:
 + Name: AIgatha token
 + Symbol: __XXX__
 + Decimals: __18__
@@ -83,9 +83,9 @@ Documentation are listed as follows.
 
 
 # AIgathaVault contract operation
-![test](/images/vaultcontract_operation.png)
+![vaultcontract_operatio](/images/vaultcontract_operation.png)
 ### Locking period  
-
+![unlocktime](/images/unlocktime.png)
 
 # Authors
 AIgatha team: Site, GitHub
