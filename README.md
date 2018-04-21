@@ -59,8 +59,6 @@ function extendSaleTime() onlyOwner public {
 > + tokenRecipient is the contract interface which is comply with `receiveApproval` and used by `approveAndCall`
 > + TokenERC20 is the contract standard ERC20 token with burnable functions 
 
-### Class Diagram
-The diagram below shows the inheritance relationship between the contracts used to create the AIgatha Crowdsale contract and the AIgatha Token contract.
 ### AIgathaToken Contract Functions
 Documentation are listed as follows. 
 + `supply()` : return the remaining sales cap at the calling moment. It can be used internally.
@@ -82,7 +80,10 @@ Documentation are listed as follows.
 + `withdraw(amount)` : owner withdraw `amount` of token, which is part of `unlockAmount` , to wallet after `unlockPeriod` passed by.
 
 
-# AIgathaVault contract operation
+# Smart Contract operation
+### AIgathaToken Contract Process flow diagram
+![vaultcontract_operatio](/images/aigathatoken_operation.png)
+### AIgathaVault Contract Process flow diagram
 ![vaultcontract_operatio](/images/vaultcontract_operation.png)
 ### Locking period  
 ![unlocktime](/images/unlocktime.png)
