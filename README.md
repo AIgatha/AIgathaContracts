@@ -50,8 +50,7 @@ function extendSaleTime() onlyOwner public {
 + Token sales threshold is 0.4 billion AIgatha tokens.
 
 ### Token Distribution
-
-
+![Token Distribution](/images/token_distribution.png)
 
 
 # Smart Contracts Code
