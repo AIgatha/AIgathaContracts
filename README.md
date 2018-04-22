@@ -2,7 +2,7 @@
 AIgatha Ethereum contracts consist of
 + AIgathaToken contract - the coin supposed to be the main digital asset in AIgatha application; emits XXXs to investors during Presale and Publicsale phases.
 
-+ AIgathaVault contract - We designed the Vault Contract to store XXX token and lock ... until releasing token by period.
++ AIgathaVault contract - The primary function of this contract is to save and lock part of the token. The token will be sent to the appointed wallet after the unlocking stage.
 
 + Ethereum Multisignature Wallet - 
 # Token contract
@@ -155,7 +155,7 @@ function AIgathaVault(address _token, address _wallet, uint256 _unlockPeriod, ui
 ```
 + @dev Constructor of AIgathaVault
 + @param _token The address where the token contract is
-+ @param _wallet The address needed to be locked
++ @param _wallet Sent the token to appointed address after the unlocking stage
 + @param _unlockPeriod The period to be locked on token
 + @param _unlockAmount The amount should be unlocked in each unlockPeriod
 #### claim
