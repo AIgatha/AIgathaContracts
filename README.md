@@ -178,19 +178,4 @@ owner withdraw `amount` of token, which is part of `unlockAmount` , to wallet af
 ![unlocktime](/images/unlocktime.png)
 
 # Authors
-AIgatha team: Site, GitHub
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+AIgatha team: [Site](https://aigatha.com), [GitHub](https://github.com/AIgatha)
