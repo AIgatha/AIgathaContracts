@@ -29,7 +29,7 @@ Crowdsale rule for AIgatha project. It receives ethers and sends back correspond
 ### Crowdsale schedule modification
 
 After the end of crowdfunding, if the threshold is not reached, the crowdfunding period will only be extended once.
-```ruby
+```javascript
 function extendSaleTime() onlyOwner public {
   require(!saleActive());
   require(!extended);
@@ -60,17 +60,89 @@ function extendSaleTime() onlyOwner public {
 > + TokenERC20 is the contract standard ERC20 token with burnable functions 
 
 ### AIgathaToken Contract Functions
-Documentation are listed as follows. 
-+ `supply()` : return the remaining sales cap at the calling moment. It can be used internally.
-+ `saleActive()` : to see whether it is on-sale or not.
-+ `extendSaleTime()` : extend the sales time if the sold amount is not achieve the threshold amount set in the beginning. By calling this function, it will extend the sale time 2 months more. It can only be called by owner.
-+ `getRateAt(at)` : get the exchange rate of ether to token at `at` time.
-+ `push(buyer, amount)` : push `amount` to `buyer` who bought the token in preICO by owner.
-+ `buyTokens(sender, value)` : `sender` uses `value` ether to buy tokens with rate obtained from `getRateAt()` 
-+ `withdraw()` : withdraw all ether in the contract back to the wallet where save the whole funds. This function can only be called by owner.
-+ `finalize()` : owner burn all the remain token which is unsold after the selling period and make token capable of being tranferred.
-+ `functioni()` : fallback function which will redirect to `buyToken()`.
+Documentation are listed as follows.
+#### AIgathaToken
+```javascript
+function AIgathaToken(address _wallet, uint256 _saleCap, uint256 _totalSupply, uint256 _threshold, uint256 _start, uint256 _end)
+```
++ @dev Constructor of AIgatha Token
++ @param _wallet The address where funds are collected
++ @param _saleCap The token cap in public round
++ @param _totalSupply The total amount of token
++ @param _threshold The percentage of selling amount need to achieve at least e.g. 40% -> _threshold = 40
++ @param _start The start date in seconds
++ @param _end The end date in seconds
 
+#### supply
+```javascript
+function supply() internal view returns (uint256)
+```
+return the remaining sales cap at the calling moment. It can be used internally.
+#### saleActive
+```javascript
+function saleActive() public view returns (bool)
+```
+to see whether it is on-sale or not.
+#### extendSaleTime
+```javascript
+function extendSaleTime() onlyOwner public
+```
+extend the sales time if the sold amount is not achieve the threshold amount set in the beginning. By calling this function, it will extend the sale time 2 months more. It can only be called by owner.
+#### getRateAt
+```javascript
+function getRateAt(uint256 at) public view returns (uint256)
+```
+get the exchange rate of ether to token at `at` time.
+#### push
+```javascript
+function push(address buyer, uint256 amount) onlyOwner public
+```
+push `amount` to `buyer` who bought the token in preICO by owner.
+#### buyTokens
+```javascript
+function buyTokens(address sender, uint256 value) internal
+```
+`sender` uses `value` ether to buy tokens with rate obtained from `getRateAt()` 
+#### withdraw
+```javascript
+function withdraw() onlyOwner public 
+```
+withdraw all ether in the contract back to the wallet where save the whole funds. This function can only be called by owner.
+#### finalize
+```javascript
+function finalize() onlyOwner public
+```
+owner lock manually all the remain token which is unsold after the selling period and make token capable of being tranferred.
+#### functioni
+```javascript
+function () payable public
+```
+fallback function which will redirect to `buyToken()`.
+### AIgathaToken Contract Events
++ Burn
+```javascript
+event Burn(address indexed from, uint256 value);
+```
++ Transfer
+```rubjavascripty
+event Transfer(address indexed from, address indexed to, uint256 value);
+```
++ Approval
+```javascript
+event Approval(address indexed owner, address indexed spender, uint256 value);
+```
++ TokenPurchase
+```javascript
+event TokenPurchase(address indexed purchaser, uint256 value, uint256 amount);
+```
++ PreICOTokenPushed
+```javascript
+event PreICOTokenPushed(address indexed buyer, uint256 amount);
+```
++ UserIDChanged
+```javascript
+event UserIDChanged(address owner, bytes32 user_id);
+```
 ### AIgathaVault Contract Functions
 > It is used to lock the `unlockAmount` of token in `wallet` every `unlockPeriod`. 
 > Therefore, one wallet should correspond to one contract like this Basic token locker which can only be operated by owner.
