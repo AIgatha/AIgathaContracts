@@ -149,11 +149,15 @@ event UserIDChanged(address owner, bytes32 user_id);
 
 + Documentation are listed as follows.
 
-#### TokenLocker
+#### AIgathaVault
 ```javascript
-function TokenLocker(address _token, address _wallet, uint256 _unlockPeriod, uint256 _unlockAmount) public
+function AIgathaVault(address _token, address _wallet, uint256 _unlockPeriod, uint256 _unlockAmount) public
 ```
-
++ @dev Constructor of AIgathaVault
++ @param _token The address where the token contract is
++ @param _wallet The address needed to be locked
++ @param _unlockPeriod The period to be locked on token
++ @param _unlockAmount The amount should be unlocked in each unlockPeriod
 #### claim
 ```javascript
 function claim() public onlyOwner
