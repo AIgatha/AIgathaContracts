@@ -171,7 +171,7 @@ owner withdraw `amount` of token, which is part of `unlockAmount` , to wallet af
 
 # Smart Contract operation
 ### AIgathaToken Contract Process flow diagram
-![vaultcontract_operatio](/images/aigathatoken_operation_fix.png)
+![vaultcontract_operatio](/images/aigathatoken_operation.png)
 ### AIgathaVault Contract Process flow diagram
 ![vaultcontract_operatio](/images/vaultcontract_operation.png)
 ### Locking period  
