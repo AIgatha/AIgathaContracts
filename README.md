@@ -119,27 +119,27 @@ function () payable public
 ```
 fallback function which will redirect to `buyToken()`.
 ### AIgathaToken Contract Events
-+ Burn
+#### Burn
 ```javascript
 event Burn(address indexed from, uint256 value);
 ```
-+ Transfer
-```rubjavascripty
+#### Transfer
+```javascript
 event Transfer(address indexed from, address indexed to, uint256 value);
 ```
-+ Approval
+#### Approval
 ```javascript
 event Approval(address indexed owner, address indexed spender, uint256 value);
 ```
-+ TokenPurchase
+#### TokenPurchase
 ```javascript
 event TokenPurchase(address indexed purchaser, uint256 value, uint256 amount);
 ```
-+ PreICOTokenPushed
+#### PreICOTokenPushed
 ```javascript
 event PreICOTokenPushed(address indexed buyer, uint256 amount);
 ```
-+ UserIDChanged
+#### UserIDChanged
 ```javascript
 event UserIDChanged(address owner, bytes32 user_id);
 ```
@@ -148,9 +148,22 @@ event UserIDChanged(address owner, bytes32 user_id);
 > Therefore, one wallet should correspond to one contract like this Basic token locker which can only be operated by owner.
 
 + Documentation are listed as follows.
-+ `claim()` : owner claim that all `unlockAmount` of token can be sent to wallet after `unlockPeriod` passed by.
-+ `withdraw(amount)` : owner withdraw `amount` of token, which is part of `unlockAmount` , to wallet after `unlockPeriod` passed by.
 
+#### TokenLocker
+```javascript
+function TokenLocker(address _token, address _wallet, uint256 _unlockPeriod, uint256 _unlockAmount) public
+```
+
+#### claim
+```javascript
+function claim() public onlyOwner
+```
+owner claim that all `unlockAmount` of token can be sent to wallet after `unlockPeriod` passed by.
+#### withdraw
+```javascript
+function withdraw(uint256 amount) public onlyOwner
+```
+owner withdraw `amount` of token, which is part of `unlockAmount` , to wallet after `unlockPeriod` passed by.
 
 # Smart Contract operation
 ### AIgathaToken Contract Process flow diagram
