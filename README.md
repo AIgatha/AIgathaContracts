@@ -4,7 +4,7 @@ AIgatha Ethereum contracts consist of
 
 + AIgathaVault contract - The primary function of this contract is to save and lock part of the token. The token will be sent to the appointed wallet after the unlocking stage.
 
-+ Ethereum Multisignature Wallet - 
++ Ethereum Multisignature Wallet - we used [gnosis](https://github.com/gnosis/MultiSigWallet) to make our multisignature wallet.
 # Token contract
 XXX is [ERC-20](https://github.com/ethereum/EIPs/issues/20) standard token with the following paramaters:
 + Name: AIgatha token
