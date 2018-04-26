@@ -1,8 +1,8 @@
 # AIgatha Contracts (A draft document)
 AIgatha Ethereum contracts consist of
-+ AIgathaToken contract - the coin supposed to be the main digital asset in AIgatha application; emits XXXs to investors during Presale and Publicsale phases.
++ AIgathaToken contract - the coin will be the main digital asset in AIgatha application; emits XXXs to investors during Presale and Publicsale phases.
 
-+ AIgathaVault contract - The primary function of this contract is to save and lock part of the token. The token will be sent to the appointed wallet after the unlocking stage.
++ AIgathaVault contract - the primary function of this contract is to save and lock part of the token. The token will be sent to the appointed wallet after the unlocking stage.
 
 + Ethereum Multisignature Wallet - we used [gnosis](https://github.com/gnosis/MultiSigWallet) to make our multisignature wallet.
 # Token contract
@@ -15,7 +15,7 @@ XXX is [ERC-20](https://github.com/ethereum/EIPs/issues/20) standard token with 
 + Source Code: [AIgathaToken.sol]()
 + Mainnet address: [Not deployed yet]()
 # Crowdsale schedule
-Crowdsale rule for AIgatha project. It receives ethers and sends back corresponding amount of XXX tokens. Token price depends on the current phase (see the schedule). The following table contains a list of phases, each phase has a start time, end time and token price in ETH.
+In our AIgatha project, we receive ethers and send back corresponding amount of XXX tokens. Token price depends on the current stage (see the schedule). The following table shows each stage of the crowdsale. The starting date, ending date and ETH token price of each stage are all clearly displayed.
 ### Crowdsale schedule
 
 |Phase|Ph.Name|Start date (UTC)|Start Unix|End date (UTC)|End Unix|Price, ETH|
@@ -27,8 +27,7 @@ Crowdsale rule for AIgatha project. It receives ethers and sends back correspond
 |5|Publicsale-2|2018-07-16 00:00:00|1531670400|2018-07-31 23:59:59|1533052799|10,000|
 
 ### Crowdsale schedule modification
-
-After the end of crowdfunding, if the threshold is not reached, the crowdfunding period will only be extended once.
+The crowdfunding will be only extended once if we fail to reach the threshold at the end of the first fundraising.
 ```javascript
 function extendSaleTime() onlyOwner public {
   require(!saleActive());
@@ -39,15 +38,14 @@ function extendSaleTime() onlyOwner public {
 }
 ```
 # Crowdsale Specification
-
 + AIgatha token is ERC-20 compliant.
 + AIgatha token is hardcapped at 2 billion tokens.
 + AIgatha token is non-mintable.
 + Any excess token will be locked by the owner at the end of the crowdsale.
-+ AIgatha tokens will be released at period of the crowdsale but be transferable only after the crowdsale ends.
++ AIgatha tokens will be released during the crowdsale, but the tokes will only be transferable after the crowdsale ends.
 + __Presale__ contributors are required to be whitelisted.
-+ Extending the crowdsale for two months if the threshold is not reached.
-+ Token sales threshold is 0.4 billion AIgatha tokens.
++ Crowdsale will be extended for another two months if we fail to reach the threshold.
++ The threshold of crowdsale: 0.4 billion AIgatha tokens.
 
 ### Token Distribution
 ![Token Distribution](/images/token_distribution.png)
@@ -57,7 +55,7 @@ function extendSaleTime() onlyOwner public {
 ### Development Framework
 > + The safeMath library and Ownable contract are referred to openZeppelin
 > + tokenRecipient is the contract interface which is comply with `receiveApproval` and used by `approveAndCall`
-> + TokenERC20 is the contract standard ERC20 token with burnable functions 
+> + TokenERC20 is the contract standard ERC20 token with burnable functions
 
 ### AIgathaToken Contract Functions
 Documentation are listed as follows.
