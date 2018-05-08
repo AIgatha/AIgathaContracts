@@ -45,7 +45,7 @@ function extendSaleTime() onlyOwner public {
 + AIgatha tokens will be released during the crowdsale, but the tokes will only be transferable after the crowdsale ends.
 + __Presale__ contributors are required to be whitelisted.
 + Crowdsale will be extended for another two months if we fail to reach the threshold.
-+ The threshold of crowdsale: 0.4 billion AIgatha tokens.
++ The threshold of crowdsale: 0.6 billion AIgatha tokens.
 
 ### Token Distribution
 ![Token Distribution](/images/token_distribution.png)
