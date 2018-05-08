@@ -12,8 +12,8 @@ XXX is [ERC-20](https://github.com/ethereum/EIPs/issues/20) standard token with 
 + Decimals: __18__
 + Mintable: __No__
 + Burnable: __Yes__, owner can burn his tokens
-+ Source Code: [AIgathaToken.sol]()
-+ Mainnet address: [Not deployed yet]()
++ Source Code: [AIgathaToken.sol](/contracts/AIgathaToken.sol)
++ Mainnet address: [AIgatha Token](https://etherscan.io/token/0x1543d0f83489e82a1344df6827b23d541f235a50)
 # Crowdsale schedule
 In our AIgatha project, we receive ethers and send back corresponding amount of XXX tokens. Token price depends on the current stage (see the schedule). The following table shows each stage of the crowdsale. The starting date, ending date and ETH token price of each stage are all clearly displayed.
 ### Crowdsale schedule
@@ -32,7 +32,7 @@ The crowdfunding will be only extended once if we fail to reach the threshold at
 function extendSaleTime() onlyOwner public {
   require(!saleActive());
   require(!extended);
-  require(supply() >= threshold);
+  require((salecap - supply()) < threshold);
   extended = true;
   endDate += 60 days;
 }
