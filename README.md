@@ -1,21 +1,21 @@
 # AIgatha Contracts (A draft document)
 AIgatha Ethereum contracts consist of
-+ AIgathaToken contract - the coin will be the main digital asset in AIgatha application; emits XXXs to investors during Presale and Publicsale phases.
++ AIgathaToken contract - the coin will be the main digital asset in AIgatha application; emits ATHs to investors during Presale and Publicsale phases.
 
 + AIgathaVault contract - the primary function of this contract is to save and lock part of the token. The token will be sent to the appointed wallet after the unlocking stage.
 
 + Ethereum Multisignature Wallet - we used [gnosis](https://github.com/gnosis/MultiSigWallet) to make our multisignature wallet.
 # Token contract
-XXX is [ERC-20](https://github.com/ethereum/EIPs/issues/20) standard token with the following paramaters:
+ATH is [ERC-20](https://github.com/ethereum/EIPs/issues/20) standard token with the following paramaters:
 + Name: AIgatha token
-+ Symbol: __XXX__
++ Symbol: __ATH__
 + Decimals: __18__
 + Mintable: __No__
 + Burnable: __Yes__, owner can burn his tokens
 + Source Code: [AIgathaToken.sol](/contracts/AIgathaToken.sol)
 + Mainnet address: [AIgatha Token](https://etherscan.io/token/0x1543d0f83489e82a1344df6827b23d541f235a50)
 # Crowdsale schedule
-In our AIgatha project, we receive ethers and send back corresponding amount of XXX tokens. Token price depends on the current stage (see the schedule). The following table shows each stage of the crowdsale. The starting date, ending date and ETH token price of each stage are all clearly displayed.
+In our AIgatha project, we receive ethers and send back corresponding amount of ATH tokens. Token price depends on the current stage (see the schedule). The following table shows each stage of the crowdsale. The starting date, ending date and ETH token price of each stage are all clearly displayed.
 ### Crowdsale schedule
 
 |Phase|Ph.Name|Start date (UTC)|Start Unix|End date (UTC)|End Unix|Price, ETH|
