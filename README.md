@@ -1,4 +1,4 @@
-# AIgatha Contracts (A draft document)
+# AIgatha Contracts
 AIgatha Ethereum contracts consist of
 + AIgathaToken contract - the coin will be the main digital asset in AIgatha application; emits ATHs to investors during Presale and Publicsale phases.
 
